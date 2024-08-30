@@ -30,7 +30,6 @@ def astar(graph, start, goal, heuristic):
             new_cost = cost[current] + graph[current][neighbor]
             if neighbor not in cost or new_cost < cost[neighbor]:
                 cost[neighbor] = new_cost
-
                 priority = new_cost + heuristic[neighbor]
                 heapq.heappush(frontier, (priority, neighbor))
                 path[neighbor] = current
@@ -51,4 +50,4 @@ goal = "D"
 
 path = astar(graph, start, goal, heuristic)
 
-print("shortest path from ", start, " to ", goal, " : ", path)
+print(f"Shortest path from {start} to {goal}: {path}")
