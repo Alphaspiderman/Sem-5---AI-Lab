@@ -51,6 +51,6 @@ for k, v in vc.items():
     print(f"Cost of {k}: {v}")
 soln = best_fs(src, dest)
 if soln:
-    print(f"Path: {soln[::-1]}")
+    print(f"Path: {soln}")
 else:
     print("No Path")
