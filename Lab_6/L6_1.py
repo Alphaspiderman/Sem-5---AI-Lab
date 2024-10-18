@@ -5,7 +5,7 @@ def solve(max_j1, max_j2, goal):
     while q:
         (j1, j2), p = q.pop(0)
         if j1 == goal or j2 == goal:
-            return path
+            return p
 
         states = [
             ((max_j1, j2), p + ["Fill Jug 1"]),
@@ -28,6 +28,7 @@ def solve(max_j1, max_j2, goal):
                     pass
                 else:
                     q.append(((nj1, nj2), path))
+                    visited.add((nj1, nj2))
 
 
 jug_1 = int(input("Capacity of Jug 1: "))
